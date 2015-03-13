@@ -1,0 +1,578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		959A3E2C7F8859FCF36A35DD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F14A23B0B3202581B62841 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C502D0CE1A9F5D9D009F7827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C502D0CD1A9F5D9D009F7827 /* AppDelegate.swift */; };
+		C502D0D01A9F5D9D009F7827 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C502D0CF1A9F5D9D009F7827 /* ViewController.swift */; };
+		C502D0D31A9F5D9D009F7827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C502D0D11A9F5D9D009F7827 /* Main.storyboard */; };
+		C502D0D51A9F5D9D009F7827 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C502D0D41A9F5D9D009F7827 /* Images.xcassets */; };
+		C502D0D81A9F5D9D009F7827 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C502D0D61A9F5D9D009F7827 /* LaunchScreen.xib */; };
+		C502D0E41A9F5D9D009F7827 /* liferay_tasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C502D0E31A9F5D9D009F7827 /* liferay_tasksTests.swift */; };
+		C5806D931AA6372B009C6D78 /* PreviewArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5806D921AA6372B009C6D78 /* PreviewArticleViewController.swift */; };
+		C5983C981A9F6AEB00C90463 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5983C971A9F6AEB00C90463 /* LoginViewController.swift */; };
+		C5CDDBC71AA4B516002760F6 /* LRWorkflowTaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CDDBC61AA4B516002760F6 /* LRWorkflowTaskService.swift */; };
+		C5CDDBC91AA4BD7E002760F6 /* WorkflowTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CDDBC81AA4BD7E002760F6 /* WorkflowTaskTableViewCell.swift */; };
+		C5E7CBC41AB2CB2C00FD0CCB /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E7CBC31AB2CB2C00FD0CCB /* HeaderTableViewCell.swift */; };
+		C5FA45751AA47B45001662C6 /* WorkflowTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA45741AA47B45001662C6 /* WorkflowTask.swift */; };
+		C5FA45791AA47EC5001662C6 /* MyTasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA45781AA47EC5001662C6 /* MyTasksTableViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C502D0DE1A9F5D9D009F7827 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C502D0C01A9F5D9D009F7827 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C502D0C71A9F5D9D009F7827;
+			remoteInfo = "liferay-tasks";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5345A39CB5EEA7B073D21E3D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C502D0C81A9F5D9D009F7827 /* liferay-tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "liferay-tasks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C502D0CC1A9F5D9D009F7827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C502D0CD1A9F5D9D009F7827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C502D0CF1A9F5D9D009F7827 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C502D0D21A9F5D9D009F7827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C502D0D41A9F5D9D009F7827 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C502D0D71A9F5D9D009F7827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		C502D0DD1A9F5D9D009F7827 /* liferay-tasksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "liferay-tasksTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C502D0E21A9F5D9D009F7827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C502D0E31A9F5D9D009F7827 /* liferay_tasksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = liferay_tasksTests.swift; sourceTree = "<group>"; };
+		C5806D921AA6372B009C6D78 /* PreviewArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewArticleViewController.swift; sourceTree = "<group>"; };
+		C5983C961A9F5F6A00C90463 /* liferay-tasks-bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "liferay-tasks-bridge.h"; sourceTree = "<group>"; };
+		C5983C971A9F6AEB00C90463 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C5CDDBC61AA4B516002760F6 /* LRWorkflowTaskService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LRWorkflowTaskService.swift; sourceTree = "<group>"; };
+		C5CDDBC81AA4BD7E002760F6 /* WorkflowTaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkflowTaskTableViewCell.swift; sourceTree = "<group>"; };
+		C5E7CBC31AB2CB2C00FD0CCB /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		C5FA45741AA47B45001662C6 /* WorkflowTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkflowTask.swift; sourceTree = "<group>"; };
+		C5FA45781AA47EC5001662C6 /* MyTasksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTasksTableViewController.swift; sourceTree = "<group>"; };
+		ECB69A9EE9A3515EA9918B94 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F1F14A23B0B3202581B62841 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C502D0C51A9F5D9D009F7827 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				959A3E2C7F8859FCF36A35DD /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C502D0DA1A9F5D9D009F7827 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C502D0BF1A9F5D9D009F7827 = {
+			isa = PBXGroup;
+			children = (
+				C502D0CA1A9F5D9D009F7827 /* liferay-tasks */,
+				C502D0E01A9F5D9D009F7827 /* liferay-tasksTests */,
+				C502D0C91A9F5D9D009F7827 /* Products */,
+				F5DAF97490F697A8F44F9CED /* Pods */,
+				DF0FFAC1A6E63BA1EE11E20C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C502D0C91A9F5D9D009F7827 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C502D0C81A9F5D9D009F7827 /* liferay-tasks.app */,
+				C502D0DD1A9F5D9D009F7827 /* liferay-tasksTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C502D0CA1A9F5D9D009F7827 /* liferay-tasks */ = {
+			isa = PBXGroup;
+			children = (
+				C5983C961A9F5F6A00C90463 /* liferay-tasks-bridge.h */,
+				C502D0CD1A9F5D9D009F7827 /* AppDelegate.swift */,
+				C502D0CF1A9F5D9D009F7827 /* ViewController.swift */,
+				C502D0D11A9F5D9D009F7827 /* Main.storyboard */,
+				C502D0D41A9F5D9D009F7827 /* Images.xcassets */,
+				C502D0D61A9F5D9D009F7827 /* LaunchScreen.xib */,
+				C502D0CB1A9F5D9D009F7827 /* Supporting Files */,
+				C5FA45771AA47D81001662C6 /* Controller */,
+				C5FA45761AA47C8F001662C6 /* Model */,
+				C5FA457C1AA4B411001662C6 /* Service */,
+			);
+			path = "liferay-tasks";
+			sourceTree = "<group>";
+		};
+		C502D0CB1A9F5D9D009F7827 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C502D0CC1A9F5D9D009F7827 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C502D0E01A9F5D9D009F7827 /* liferay-tasksTests */ = {
+			isa = PBXGroup;
+			children = (
+				C502D0E31A9F5D9D009F7827 /* liferay_tasksTests.swift */,
+				C502D0E11A9F5D9D009F7827 /* Supporting Files */,
+			);
+			path = "liferay-tasksTests";
+			sourceTree = "<group>";
+		};
+		C502D0E11A9F5D9D009F7827 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C502D0E21A9F5D9D009F7827 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C5FA45761AA47C8F001662C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C5FA45741AA47B45001662C6 /* WorkflowTask.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C5FA45771AA47D81001662C6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C5983C971A9F6AEB00C90463 /* LoginViewController.swift */,
+				C5FA45781AA47EC5001662C6 /* MyTasksTableViewController.swift */,
+				C5CDDBC81AA4BD7E002760F6 /* WorkflowTaskTableViewCell.swift */,
+				C5806D921AA6372B009C6D78 /* PreviewArticleViewController.swift */,
+				C5E7CBC31AB2CB2C00FD0CCB /* HeaderTableViewCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C5FA457C1AA4B411001662C6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C5CDDBC61AA4B516002760F6 /* LRWorkflowTaskService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		DF0FFAC1A6E63BA1EE11E20C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1F14A23B0B3202581B62841 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5DAF97490F697A8F44F9CED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ECB69A9EE9A3515EA9918B94 /* Pods.debug.xcconfig */,
+				5345A39CB5EEA7B073D21E3D /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C502D0C71A9F5D9D009F7827 /* liferay-tasks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C502D0E71A9F5D9D009F7827 /* Build configuration list for PBXNativeTarget "liferay-tasks" */;
+			buildPhases = (
+				71D3D18691D8F4AF482A99EC /* Check Pods Manifest.lock */,
+				C502D0C41A9F5D9D009F7827 /* Sources */,
+				C502D0C51A9F5D9D009F7827 /* Frameworks */,
+				C502D0C61A9F5D9D009F7827 /* Resources */,
+				E57C0DFC7E8D8527627AC6A2 /* Embed Pods Frameworks */,
+				3697F9499BF47FAA2A05EBBC /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "liferay-tasks";
+			productName = "liferay-tasks";
+			productReference = C502D0C81A9F5D9D009F7827 /* liferay-tasks.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C502D0DC1A9F5D9D009F7827 /* liferay-tasksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C502D0EA1A9F5D9D009F7827 /* Build configuration list for PBXNativeTarget "liferay-tasksTests" */;
+			buildPhases = (
+				C502D0D91A9F5D9D009F7827 /* Sources */,
+				C502D0DA1A9F5D9D009F7827 /* Frameworks */,
+				C502D0DB1A9F5D9D009F7827 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C502D0DF1A9F5D9D009F7827 /* PBXTargetDependency */,
+			);
+			name = "liferay-tasksTests";
+			productName = "liferay-tasksTests";
+			productReference = C502D0DD1A9F5D9D009F7827 /* liferay-tasksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C502D0C01A9F5D9D009F7827 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = PD;
+				TargetAttributes = {
+					C502D0C71A9F5D9D009F7827 = {
+						CreatedOnToolsVersion = 6.1.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					C502D0DC1A9F5D9D009F7827 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = C502D0C71A9F5D9D009F7827;
+					};
+				};
+			};
+			buildConfigurationList = C502D0C31A9F5D9D009F7827 /* Build configuration list for PBXProject "liferay-tasks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C502D0BF1A9F5D9D009F7827;
+			productRefGroup = C502D0C91A9F5D9D009F7827 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C502D0C71A9F5D9D009F7827 /* liferay-tasks */,
+				C502D0DC1A9F5D9D009F7827 /* liferay-tasksTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C502D0C61A9F5D9D009F7827 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C502D0D31A9F5D9D009F7827 /* Main.storyboard in Resources */,
+				C502D0D81A9F5D9D009F7827 /* LaunchScreen.xib in Resources */,
+				C502D0D51A9F5D9D009F7827 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C502D0DB1A9F5D9D009F7827 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3697F9499BF47FAA2A05EBBC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71D3D18691D8F4AF482A99EC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E57C0DFC7E8D8527627AC6A2 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C502D0C41A9F5D9D009F7827 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5FA45791AA47EC5001662C6 /* MyTasksTableViewController.swift in Sources */,
+				C5E7CBC41AB2CB2C00FD0CCB /* HeaderTableViewCell.swift in Sources */,
+				C5983C981A9F6AEB00C90463 /* LoginViewController.swift in Sources */,
+				C502D0D01A9F5D9D009F7827 /* ViewController.swift in Sources */,
+				C5CDDBC91AA4BD7E002760F6 /* WorkflowTaskTableViewCell.swift in Sources */,
+				C502D0CE1A9F5D9D009F7827 /* AppDelegate.swift in Sources */,
+				C5CDDBC71AA4B516002760F6 /* LRWorkflowTaskService.swift in Sources */,
+				C5806D931AA6372B009C6D78 /* PreviewArticleViewController.swift in Sources */,
+				C5FA45751AA47B45001662C6 /* WorkflowTask.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C502D0D91A9F5D9D009F7827 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C502D0E41A9F5D9D009F7827 /* liferay_tasksTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C502D0DF1A9F5D9D009F7827 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C502D0C71A9F5D9D009F7827 /* liferay-tasks */;
+			targetProxy = C502D0DE1A9F5D9D009F7827 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C502D0D11A9F5D9D009F7827 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C502D0D21A9F5D9D009F7827 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C502D0D61A9F5D9D009F7827 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C502D0D71A9F5D9D009F7827 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C502D0E51A9F5D9D009F7827 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C502D0E61A9F5D9D009F7827 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C502D0E81A9F5D9D009F7827 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECB69A9EE9A3515EA9918B94 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"${PODS_ROOT}/Headers/Public/Liferay-iOS-SDK\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/KeychainAccess\"",
+				);
+				INFOPLIST_FILE = "liferay-tasks/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "liferay-tasks/liferay-tasks-bridge.h";
+			};
+			name = Debug;
+		};
+		C502D0E91A9F5D9D009F7827 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5345A39CB5EEA7B073D21E3D /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"${PODS_ROOT}/Headers/Public/Liferay-iOS-SDK\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/KeychainAccess\"",
+				);
+				INFOPLIST_FILE = "liferay-tasks/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "liferay-tasks/liferay-tasks-bridge.h";
+			};
+			name = Release;
+		};
+		C502D0EB1A9F5D9D009F7827 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "liferay-tasksTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/liferay-tasks.app/liferay-tasks";
+			};
+			name = Debug;
+		};
+		C502D0EC1A9F5D9D009F7827 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "liferay-tasksTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/liferay-tasks.app/liferay-tasks";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C502D0C31A9F5D9D009F7827 /* Build configuration list for PBXProject "liferay-tasks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C502D0E51A9F5D9D009F7827 /* Debug */,
+				C502D0E61A9F5D9D009F7827 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C502D0E71A9F5D9D009F7827 /* Build configuration list for PBXNativeTarget "liferay-tasks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C502D0E81A9F5D9D009F7827 /* Debug */,
+				C502D0E91A9F5D9D009F7827 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C502D0EA1A9F5D9D009F7827 /* Build configuration list for PBXNativeTarget "liferay-tasksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C502D0EB1A9F5D9D009F7827 /* Debug */,
+				C502D0EC1A9F5D9D009F7827 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C502D0C01A9F5D9D009F7827 /* Project object */;
+}
