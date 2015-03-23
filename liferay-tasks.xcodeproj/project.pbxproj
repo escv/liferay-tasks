@@ -35,7 +35,7 @@
 
 /* Begin PBXFileReference section */
 		5345A39CB5EEA7B073D21E3D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		C502D0C81A9F5D9D009F7827 /* liferay-tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "liferay-tasks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C502D0C81A9F5D9D009F7827 /* Liferay Tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Liferay Tasks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C502D0CC1A9F5D9D009F7827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C502D0CD1A9F5D9D009F7827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C502D0D21A9F5D9D009F7827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		C502D0C91A9F5D9D009F7827 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C502D0C81A9F5D9D009F7827 /* liferay-tasks.app */,
+				C502D0C81A9F5D9D009F7827 /* Liferay Tasks.app */,
 				C502D0DD1A9F5D9D009F7827 /* liferay-tasksTests.xctest */,
 			);
 			name = Products;
@@ -203,7 +203,7 @@
 			);
 			name = "liferay-tasks";
 			productName = "liferay-tasks";
-			productReference = C502D0C81A9F5D9D009F7827 /* liferay-tasks.app */;
+			productReference = C502D0C81A9F5D9D009F7827 /* Liferay Tasks.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C502D0DC1A9F5D9D009F7827 /* liferay-tasksTests */ = {
@@ -483,7 +483,7 @@
 				);
 				INFOPLIST_FILE = "liferay-tasks/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Liferay Tasks";
 				SWIFT_OBJC_BRIDGING_HEADER = "liferay-tasks/liferay-tasks-bridge.h";
 			};
 			name = Debug;
@@ -503,7 +503,7 @@
 				);
 				INFOPLIST_FILE = "liferay-tasks/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Liferay Tasks";
 				SWIFT_OBJC_BRIDGING_HEADER = "liferay-tasks/liferay-tasks-bridge.h";
 			};
 			name = Release;
