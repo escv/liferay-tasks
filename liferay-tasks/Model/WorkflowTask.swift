@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+* Model definition which conforms to the JSON exchange data
+**/
 struct WorkflowTask {
 
     var workflowTaskId:Int

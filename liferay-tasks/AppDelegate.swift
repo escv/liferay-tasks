@@ -18,17 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
         self.workflowService = LRWorkflowTaskService()
         application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         application.setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
         
-        
+        // ask user for background mode activation
         let registerUserNotificationSettings = UIApplication.instancesRespondToSelector("registerUserNotificationSettings:")
         if registerUserNotificationSettings {
             let types: UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Sound
             UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: types, categories: nil))
-            //UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotific‌​ationSettings(forTypes: types, categories: nil))
+
         }
+        
+        //self.addCertToKeychain()
         
         return true
     }
@@ -42,18 +45,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let lastTimestamp = defaults.objectForKey("lastPollTimestamp") as? String {
                 if let service = self.workflowService {
                     service.newTasksAfterTimestamp(lastTimestamp, session: lrSession, success: { (tasks:[WorkflowTask]) -> Void in
-                        if (!tasks.isEmpty) {
-                            completionHandler(UIBackgroundFetchResult.NewData)
-                            let notifiy = UILocalNotification()
-                            notifiy.alertBody = "New Workflow Task"
-                            application.presentLocalNotificationNow(notifiy)
-                            application.applicationIconBadgeNumber += tasks.count
-                        }else{
-                            completionHandler(UIBackgroundFetchResult.NoData)
-                        }
-                        return
+                            if (!tasks.isEmpty) {
+                                completionHandler(UIBackgroundFetchResult.NewData)
+                                let notifiy = UILocalNotification()
+                                notifiy.alertBody = "New Workflow Task"
+                                application.presentLocalNotificationNow(notifiy)
+                                application.applicationIconBadgeNumber += tasks.count
+                            }else{
+                                completionHandler(UIBackgroundFetchResult.NoData)
+                            }
+                            return
                         }, failure: { (e:NSError) -> Void in
-                            print("FAILED")
                             completionHandler(UIBackgroundFetchResult.Failed)
                             return
                     })
@@ -88,6 +90,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func addCertToKeychain() {
 
+        let mainbun = NSBundle.mainBundle().pathForResource("pd-test", ofType: "cer")
+        var key: NSData = NSData.dataWithContentsOfMappedFile(mainbun!)! as NSData
+        var cert:SecCertificateRef =
+            SecCertificateCreateWithData(kCFAllocatorDefault, key).takeRetainedValue()
+
+        var err:OSStatus = noErr
+
+        let secDict = NSDictionary(
+            objects: [kSecClassCertificate,cert],
+            forKeys: [kSecClass, kSecValueRef]
+        )
+        
+    
+        SecItemAdd(secDict as CFDictionaryRef, nil);
+
+    }
 }
 

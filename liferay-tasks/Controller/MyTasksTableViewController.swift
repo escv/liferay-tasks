@@ -11,13 +11,14 @@ import UIKit
 
 class MyTasksTableViewController : UITableViewController {
 
+    let MY_TASKS_SECTION = 0
+    let GROUP_TASKS_SECTION = 1
+    
     var session:LRSession?
     var myTasks:[WorkflowTask] = []
     var groupTasks:[WorkflowTask] = []
     let taskService = LRWorkflowTaskService()
     
-    let MY_TASKS_SECTION = 0
-    let GROUP_TASKS_SECTION = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,9 +121,10 @@ class MyTasksTableViewController : UITableViewController {
             (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             
             let alert = UIAlertController(title: transition.capitalizedString, message: "Please enter a comment", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            // configure alert dialog
             alert.addTextFieldWithConfigurationHandler( nil )
             alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
-            
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action:UIAlertAction!) -> Void in
                 let tf = alert.textFields?.first as? UITextField
                 if let lrSession = self.session {
@@ -139,6 +141,7 @@ class MyTasksTableViewController : UITableViewController {
                     })
                 }
             }))
+            
             self.presentViewController(alert, animated: true, completion: nil)
         })
     }

@@ -27,29 +27,27 @@ class LoginViewController : UIViewController {
     }
     
     @IBAction func login(sender: AnyObject) {
-        var e = NSError?()
         let auth = LRBasicAuthentication(username: usernameField.text, password: passwordField.text)
-        
         let session = LRSession(server: liferayHostField.text, authentication: auth)
-        
         let portalService:LRPortalService_v62 = LRPortalService_v62(session: session)
-        
+
+        var e = NSError?()
         let portalNr = portalService.getBuildNumber(&e).stringValue
 
         if (portalNr.hasPrefix("62")) {
-            LRCredentialStorage.storeCredentialForServer(
-                liferayHostField.text,
+            LRCredentialStorage.storeCredentialForServer(liferayHostField.text,
                 username: usernameField.text,
                 password: passwordField.text)
             
             // loading initial table list view
-
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let navCtrl = storyboard.instantiateViewControllerWithIdentifier("WorkflowTasksTable") as UINavigationController
             let myTasksTVC = navCtrl.viewControllers.first as MyTasksTableViewController
-            myTasksTVC.session = session
             let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+            
+            myTasksTVC.session = session
             appDelegate.session = session
+            
             self.showViewController(navCtrl, sender:self)
         }
     }

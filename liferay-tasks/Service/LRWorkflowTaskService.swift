@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+* Central service for workflow related operation which internally invokes the liferay remote api
+**/
 class LRWorkflowTaskService {
     
     let myTasksCmd = ["/liferay-tasks-portlet.workflowtask/my-workflow-tasks":["companyId":"5"]]

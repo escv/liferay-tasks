@@ -32,6 +32,9 @@ class PreviewArticleViewController : UIViewController, UIWebViewDelegate, UIActi
         }
     }
     
+    /**
+    * Creates a Action Sheet with all the possible transition used to proceed workflow
+    **/
     @IBAction func openActionSheet(sender: UIBarButtonItem) {
         let sheet = UIActionSheet(title: "Workflow Transitions", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil)
         
@@ -43,6 +46,9 @@ class PreviewArticleViewController : UIViewController, UIWebViewDelegate, UIActi
         sheet.showFromBarButtonItem(sender, animated: true)
     }
     
+    /**
+    * Delegate operation triggered when pressing an action sheet button
+    **/
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         if (buttonIndex == 0) {
             return

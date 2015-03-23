@@ -3,3 +3,4 @@
 #import "LRBasicAuthentication.h"
 #import "LRBatchSession.h"
 #import "LRCredentialStorage.h"
+#import "AFHTTPRequestOperationManager.h"
