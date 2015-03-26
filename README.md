@@ -10,4 +10,7 @@ In case of any questions, feel free to ask.
 
 ![Login Screen](https://raw.githubusercontent.com/escv/liferay-tasks/master/preview/login.png)
 ![Login Screen](https://raw.githubusercontent.com/escv/liferay-tasks/master/preview/listing.png)
+
+When "clicking" on an entry, the app show a preview
+
 ![Login Screen](https://raw.githubusercontent.com/escv/liferay-tasks/master/preview/preview.png)
