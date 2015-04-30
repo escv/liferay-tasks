@@ -1,5 +1,5 @@
 # liferay-tasks
-PRODYNA iOS App for managing Kaleo Workflow tasks. No warranties :)
+[PRODYNA AG](http://www.prodyna.com "PRODYNA") iOS App for managing Kaleo Workflow tasks. No warranties :)
 
 Allows you to maintain tasks based on content/asset submissions to a Liferay 6.2 Portal.
 The liferay plugin liferay-tasks-portlet.war must be deployed in advanced to in order to have a json-api backend.
