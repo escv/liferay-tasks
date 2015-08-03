@@ -30,7 +30,7 @@ class LoginViewController : UIViewController, LoginScreenletDelegate {
         onLoginResponseUserAttributes attributes: [String:AnyObject]) {
             println("DELEGATE: onLoginResponse called -> \(attributes)");
             
-            self.performSegueWithIdentifier("WorkflowTasksTable", sender: self)
+            self.performSegueWithIdentifier("initialSegue", sender: self)
     }
     
     func screenlet(screenlet: BaseScreenlet,
