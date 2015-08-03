@@ -8,13 +8,12 @@
 
 import Foundation
 import UIKit
+import LiferayScreens
 //import PKHUD
 
 class PreviewArticleViewController : UIViewController, UIWebViewDelegate, UIActionSheetDelegate {
     
     var task:WorkflowTask?
-    
-    var session:LRSession?
     
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var actionSheetButton: UIBarButtonItem!
@@ -62,7 +61,7 @@ class PreviewArticleViewController : UIViewController, UIWebViewDelegate, UIActi
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action:UIAlertAction!) -> Void in
             let tf = alert.textFields?.first as? UITextField
 
-            if let lrSession = self.session {
+            if let lrSession = SessionContext.createSessionFromCurrentSession() {
                 let taskService = LRWorkflowTaskService()
                 taskService.completeTask(self.task!.workflowTaskId, transition: transition, comment: tf!.text, session: lrSession, success: { (tasks:[WorkflowTask]) -> Void in
                     // enable action because transitions have changed after execution

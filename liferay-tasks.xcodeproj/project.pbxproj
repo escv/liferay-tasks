@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		959A3E2C7F8859FCF36A35DD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F14A23B0B3202581B62841 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		99F5933A1B6FB50E009187C3 /* ScreensLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F593391B6FB50E009187C3 /* ScreensLoginViewController.swift */; };
+		99F5933C1B6FBC9A009187C3 /* liferay-server-context.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99F5933B1B6FBC9A009187C3 /* liferay-server-context.plist */; };
 		C502D0CE1A9F5D9D009F7827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C502D0CD1A9F5D9D009F7827 /* AppDelegate.swift */; };
 		C502D0D31A9F5D9D009F7827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C502D0D11A9F5D9D009F7827 /* Main.storyboard */; };
 		C502D0D51A9F5D9D009F7827 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C502D0D41A9F5D9D009F7827 /* Images.xcassets */; };
@@ -25,7 +25,7 @@
 
 /* Begin PBXFileReference section */
 		5345A39CB5EEA7B073D21E3D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		99F593391B6FB50E009187C3 /* ScreensLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreensLoginViewController.swift; sourceTree = "<group>"; };
+		99F5933B1B6FBC9A009187C3 /* liferay-server-context.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "liferay-server-context.plist"; sourceTree = "<group>"; };
 		C502D0C81A9F5D9D009F7827 /* Liferay Tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Liferay Tasks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C502D0CC1A9F5D9D009F7827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C502D0CD1A9F5D9D009F7827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +81,7 @@
 		C502D0CA1A9F5D9D009F7827 /* liferay-tasks */ = {
 			isa = PBXGroup;
 			children = (
+				99F5933B1B6FBC9A009187C3 /* liferay-server-context.plist */,
 				C55EB1411AB6D3CC00800054 /* pd-test.cer */,
 				C5983C961A9F5F6A00C90463 /* liferay-tasks-bridge.h */,
 				C502D0CD1A9F5D9D009F7827 /* AppDelegate.swift */,
@@ -136,7 +137,6 @@
 				C5CDDBC81AA4BD7E002760F6 /* WorkflowTaskTableViewCell.swift */,
 				C5806D921AA6372B009C6D78 /* PreviewArticleViewController.swift */,
 				C5E7CBC31AB2CB2C00FD0CCB /* HeaderTableViewCell.swift */,
-				99F593391B6FB50E009187C3 /* ScreensLoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -238,6 +238,7 @@
 			files = (
 				C502D0D31A9F5D9D009F7827 /* Main.storyboard in Resources */,
 				C55EB1421AB6D3CC00800054 /* pd-test.cer in Resources */,
+				99F5933C1B6FBC9A009187C3 /* liferay-server-context.plist in Resources */,
 				C502D0D81A9F5D9D009F7827 /* LaunchScreen.xib in Resources */,
 				C502D0D51A9F5D9D009F7827 /* Images.xcassets in Resources */,
 			);
@@ -302,7 +303,6 @@
 				C5E7CBC41AB2CB2C00FD0CCB /* HeaderTableViewCell.swift in Sources */,
 				C5983C981A9F6AEB00C90463 /* LoginViewController.swift in Sources */,
 				C5CDDBC91AA4BD7E002760F6 /* WorkflowTaskTableViewCell.swift in Sources */,
-				99F5933A1B6FB50E009187C3 /* ScreensLoginViewController.swift in Sources */,
 				C502D0CE1A9F5D9D009F7827 /* AppDelegate.swift in Sources */,
 				C5CDDBC71AA4B516002760F6 /* LRWorkflowTaskService.swift in Sources */,
 				C5806D931AA6372B009C6D78 /* PreviewArticleViewController.swift in Sources */,

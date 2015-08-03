@@ -8,13 +8,13 @@
 
 import Foundation
 import UIKit
+import LiferayScreens
 
 class MyTasksTableViewController : UITableViewController {
 
     let MY_TASKS_SECTION = 0
     let GROUP_TASKS_SECTION = 1
     
-    var session:LRSession?
     var myTasks:[WorkflowTask] = []
     var groupTasks:[WorkflowTask] = []
     let taskService = LRWorkflowTaskService()
@@ -22,7 +22,7 @@ class MyTasksTableViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         reload()
         if let refresh = self.refreshControl {
             refresh.addTarget(self, action: "reload", forControlEvents: UIControlEvents.ValueChanged)
@@ -34,7 +34,7 @@ class MyTasksTableViewController : UITableViewController {
     * Reload both collections (assigned and group tasks)
     **/
     func reload() {
-        if let lrSession = session {
+        if let lrSession = SessionContext.createSessionFromCurrentSession() {
             taskService.loadMyTasks(lrSession, success: { (tasks:[WorkflowTask]) -> Void in
                 self.myTasks = tasks
                 self.tableView.reloadData()
@@ -102,7 +102,8 @@ class MyTasksTableViewController : UITableViewController {
     
     private func assignToMeAction(action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void {
         let task = self.taskForIndexPath(indexPath)
-        if let lrSession = self.session {
+        
+        if let lrSession = SessionContext.createSessionFromCurrentSession() {
             self.taskService.assignMeTask(task.workflowTaskId, session: lrSession, success: { (tasks:[WorkflowTask]) -> Void in
                 //prepare
                 self.tableView.beginUpdates()
@@ -128,7 +129,7 @@ class MyTasksTableViewController : UITableViewController {
             alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action:UIAlertAction!) -> Void in
                 let tf = alert.textFields?.first as? UITextField
-                if let lrSession = self.session {
+                if let lrSession = SessionContext.createSessionFromCurrentSession() {
                     self.taskService.completeTask(task.workflowTaskId, transition: transition, comment: tf!.text, session: lrSession, success: { (tasks:[WorkflowTask]) -> Void in
                         // remove the task if after processing, it is complete and nothing to do
                         if let isCompleted = tasks.first?.completed {
@@ -154,7 +155,6 @@ class MyTasksTableViewController : UITableViewController {
                 let task = self.taskForIndexPath(path)
                 LRCredentialStorage.getServer()
                 previewVC.task = task
-                previewVC.session = self.session
             }
         }
     }

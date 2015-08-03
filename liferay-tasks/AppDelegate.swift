@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LiferayScreens
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

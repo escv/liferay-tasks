@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import LiferayScreens
 
 /**
 * Central service for workflow related operation which internally invokes the liferay remote api
