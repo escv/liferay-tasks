@@ -18,14 +18,14 @@ class LRWorkflowTaskService {
     
     
     func loadMyTasks(session:LRSession, success:(([WorkflowTask])->Void)?, failure:((NSError)->Void)?=nil) {
-        prepareAsyncSession(session, success, failure)
+        prepareAsyncSession(session, success: success, failure: failure)
         
         var e = NSError?()
         session.invoke(myTasksCmd, error: &e)
     }
     
     func loadGroupTasks(session:LRSession, success:(([WorkflowTask])->Void)?, failure:((NSError)->Void)?=nil) {
-        prepareAsyncSession(session, success, failure)
+        prepareAsyncSession(session, success: success, failure: failure)
         var e = NSError?()
         session.invoke(groupTasksCmd, error: &e)
     }
@@ -36,7 +36,7 @@ class LRWorkflowTaskService {
             "workflowTaskId":"\(taskId)"
         ]]
         
-        prepareAsyncSession(session, success, failure)
+        prepareAsyncSession(session, success: success, failure: failure)
         var e = NSError?()
         session.invoke(assignMeTaskCmd, error: &e)
     }
@@ -49,7 +49,7 @@ class LRWorkflowTaskService {
             "transition": transition
         ]]
         
-        prepareAsyncSession(session, success, failure)
+        prepareAsyncSession(session, success: success, failure: failure)
         var e = NSError?()
         session.invoke(completeTaskCmd, error: &e)
     }
@@ -61,7 +61,7 @@ class LRWorkflowTaskService {
             "timestamp": timestamp
         ]]
         
-        prepareAsyncSession(session, success, failure)
+        prepareAsyncSession(session, success: success, failure: failure)
         var e = NSError?()
         session.invoke(completeTaskCmd, error: &e)
     }
@@ -73,12 +73,12 @@ class LRWorkflowTaskService {
                 if let callback = success {
                     var result:[WorkflowTask] = []
                     if (res.isKindOfClass(NSArray)) {
-                        let entries:NSArray = res as NSArray
+                        let entries:NSArray = res as! NSArray
                         for entry in entries {
-                            result.append(self.convert(entry as NSDictionary))
+                            result.append(self.convert(entry as! NSDictionary))
                         }
                     } else if (res.isKindOfClass(NSDictionary)) {
-                        result.append(self.convert(res as NSDictionary))
+                        result.append(self.convert(res as! NSDictionary))
                     }
                     callback(result)
                 }
@@ -94,9 +94,9 @@ class LRWorkflowTaskService {
     }
     
     private func convert(dict:NSDictionary) -> WorkflowTask {
-        var task = WorkflowTask(
+        let task = WorkflowTask(
             workflowTaskId: (dict["workflowTaskId"] as? NSNumber)!.integerValue,
-            title: (dict["title"] as? NSString)!,
+            title: (dict["title"] as? NSString)! as String,
             description: (dict["description"] as? String)!,
             workflowName: (dict["workflowName"] as? String)!,
             previewURL: (dict["previewUrl"] as? String)!,

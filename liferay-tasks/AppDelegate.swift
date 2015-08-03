@@ -26,14 +26,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // ask user for background mode activation
         let registerUserNotificationSettings = UIApplication.instancesRespondToSelector("registerUserNotificationSettings:")
         if registerUserNotificationSettings {
-            let types: UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Sound
+            
+            let types: UIUserNotificationType = UIUserNotificationType.Alert |
+                    UIUserNotificationType.Badge |
+                    UIUserNotificationType.Sound
+            
             UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: types, categories: nil))
-
+            UIApplication.sharedApplication().registerForRemoteNotifications()
+            
         }
         
         //self.addCertToKeychain()
         
         return true
+    }
+    
+    func application(
+        application: UIApplication,
+        didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData
+        ) {
+            //Process the deviceToken and send it to your server
+            NSLog("My token is: %@", deviceToken)
+    }
+    
+    func application(
+        application: UIApplication,
+        didFailToRegisterForRemoteNotificationsWithError error: NSError
+        ) {
+            //Log an error for debugging purposes, user doesn't need to know
+            NSLog("Failed to get token; error: %@", error) 
     }
 
     func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
@@ -93,7 +114,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func addCertToKeychain() {
 
         let mainbun = NSBundle.mainBundle().pathForResource("pd-test", ofType: "cer")
-        var key: NSData = NSData.dataWithContentsOfMappedFile(mainbun!)! as NSData
+        var key: NSData = NSData.dataWithContentsOfMappedFile(mainbun!)! as! NSData
         var cert:SecCertificateRef =
             SecCertificateCreateWithData(kCFAllocatorDefault, key).takeRetainedValue()
 

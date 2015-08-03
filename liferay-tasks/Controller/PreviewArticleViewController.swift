@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import PKHUD
+//import PKHUD
 
 class PreviewArticleViewController : UIViewController, UIWebViewDelegate, UIActionSheetDelegate {
     
@@ -66,9 +66,9 @@ class PreviewArticleViewController : UIViewController, UIWebViewDelegate, UIActi
                 let taskService = LRWorkflowTaskService()
                 taskService.completeTask(self.task!.workflowTaskId, transition: transition, comment: tf!.text, session: lrSession, success: { (tasks:[WorkflowTask]) -> Void in
                     // enable action because transitions have changed after execution
-                    HUDController.sharedController.contentView = HUDContentView.TitleView(title: "Success", image: nil)
-                    HUDController.sharedController.show()
-                    HUDController.sharedController.hide(afterDelay: 2.0)
+//                    HUDController.sharedController.contentView = HUDContentView.TitleView(title: "Success", image: nil)
+//                    HUDController.sharedController.show()
+//                    HUDController.sharedController.hide(afterDelay: 2.0)
                     self.actionSheetButton.enabled = false;
                 })
             }
@@ -78,12 +78,12 @@ class PreviewArticleViewController : UIViewController, UIWebViewDelegate, UIActi
     }
     
     func webViewDidStartLoad(webView: UIWebView) {
-        let contentView = HUDContentView.ProgressView()
-        HUDController.sharedController.contentView = contentView
-        HUDController.sharedController.show()
+//        let contentView = HUDContentView.ProgressView()
+//        HUDController.sharedController.contentView = contentView
+//        HUDController.sharedController.show()
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
-        HUDController.sharedController.hide(animated: true)
+//        HUDController.sharedController.hide(animated: true)
     }
 }

@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		959A3E2C7F8859FCF36A35DD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F14A23B0B3202581B62841 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		99F5933A1B6FB50E009187C3 /* ScreensLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F593391B6FB50E009187C3 /* ScreensLoginViewController.swift */; };
 		C502D0CE1A9F5D9D009F7827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C502D0CD1A9F5D9D009F7827 /* AppDelegate.swift */; };
 		C502D0D31A9F5D9D009F7827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C502D0D11A9F5D9D009F7827 /* Main.storyboard */; };
 		C502D0D51A9F5D9D009F7827 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C502D0D41A9F5D9D009F7827 /* Images.xcassets */; };
 		C502D0D81A9F5D9D009F7827 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C502D0D61A9F5D9D009F7827 /* LaunchScreen.xib */; };
-		C502D0E41A9F5D9D009F7827 /* liferay_tasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C502D0E31A9F5D9D009F7827 /* liferay_tasksTests.swift */; };
 		C55EB1421AB6D3CC00800054 /* pd-test.cer in Resources */ = {isa = PBXBuildFile; fileRef = C55EB1411AB6D3CC00800054 /* pd-test.cer */; };
 		C5806D931AA6372B009C6D78 /* PreviewArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5806D921AA6372B009C6D78 /* PreviewArticleViewController.swift */; };
 		C5983C981A9F6AEB00C90463 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5983C971A9F6AEB00C90463 /* LoginViewController.swift */; };
@@ -23,25 +23,15 @@
 		C5FA45791AA47EC5001662C6 /* MyTasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FA45781AA47EC5001662C6 /* MyTasksTableViewController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		C502D0DE1A9F5D9D009F7827 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C502D0C01A9F5D9D009F7827 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C502D0C71A9F5D9D009F7827;
-			remoteInfo = "liferay-tasks";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		5345A39CB5EEA7B073D21E3D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		99F593391B6FB50E009187C3 /* ScreensLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreensLoginViewController.swift; sourceTree = "<group>"; };
 		C502D0C81A9F5D9D009F7827 /* Liferay Tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Liferay Tasks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C502D0CC1A9F5D9D009F7827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C502D0CD1A9F5D9D009F7827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C502D0D21A9F5D9D009F7827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C502D0D41A9F5D9D009F7827 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C502D0D71A9F5D9D009F7827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		C502D0DD1A9F5D9D009F7827 /* liferay-tasksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "liferay-tasksTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C502D0E21A9F5D9D009F7827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C502D0E31A9F5D9D009F7827 /* liferay_tasksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = liferay_tasksTests.swift; sourceTree = "<group>"; };
 		C55EB1411AB6D3CC00800054 /* pd-test.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pd-test.cer"; sourceTree = "<group>"; };
@@ -66,13 +56,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C502D0DA1A9F5D9D009F7827 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -91,7 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				C502D0C81A9F5D9D009F7827 /* Liferay Tasks.app */,
-				C502D0DD1A9F5D9D009F7827 /* liferay-tasksTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,6 +136,7 @@
 				C5CDDBC81AA4BD7E002760F6 /* WorkflowTaskTableViewCell.swift */,
 				C5806D921AA6372B009C6D78 /* PreviewArticleViewController.swift */,
 				C5E7CBC31AB2CB2C00FD0CCB /* HeaderTableViewCell.swift */,
+				99F593391B6FB50E009187C3 /* ScreensLoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -206,44 +189,27 @@
 			productReference = C502D0C81A9F5D9D009F7827 /* Liferay Tasks.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C502D0DC1A9F5D9D009F7827 /* liferay-tasksTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C502D0EA1A9F5D9D009F7827 /* Build configuration list for PBXNativeTarget "liferay-tasksTests" */;
-			buildPhases = (
-				C502D0D91A9F5D9D009F7827 /* Sources */,
-				C502D0DA1A9F5D9D009F7827 /* Frameworks */,
-				C502D0DB1A9F5D9D009F7827 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C502D0DF1A9F5D9D009F7827 /* PBXTargetDependency */,
-			);
-			name = "liferay-tasksTests";
-			productName = "liferay-tasksTests";
-			productReference = C502D0DD1A9F5D9D009F7827 /* liferay-tasksTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		C502D0C01A9F5D9D009F7827 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = PD;
 				TargetAttributes = {
 					C502D0C71A9F5D9D009F7827 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 5X6Z9KQ663;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 						};
-					};
-					C502D0DC1A9F5D9D009F7827 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = C502D0C71A9F5D9D009F7827;
 					};
 				};
 			};
@@ -261,7 +227,6 @@
 			projectRoot = "";
 			targets = (
 				C502D0C71A9F5D9D009F7827 /* liferay-tasks */,
-				C502D0DC1A9F5D9D009F7827 /* liferay-tasksTests */,
 			);
 		};
 /* End PBXProject section */
@@ -275,13 +240,6 @@
 				C55EB1421AB6D3CC00800054 /* pd-test.cer in Resources */,
 				C502D0D81A9F5D9D009F7827 /* LaunchScreen.xib in Resources */,
 				C502D0D51A9F5D9D009F7827 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C502D0DB1A9F5D9D009F7827 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +302,7 @@
 				C5E7CBC41AB2CB2C00FD0CCB /* HeaderTableViewCell.swift in Sources */,
 				C5983C981A9F6AEB00C90463 /* LoginViewController.swift in Sources */,
 				C5CDDBC91AA4BD7E002760F6 /* WorkflowTaskTableViewCell.swift in Sources */,
+				99F5933A1B6FB50E009187C3 /* ScreensLoginViewController.swift in Sources */,
 				C502D0CE1A9F5D9D009F7827 /* AppDelegate.swift in Sources */,
 				C5CDDBC71AA4B516002760F6 /* LRWorkflowTaskService.swift in Sources */,
 				C5806D931AA6372B009C6D78 /* PreviewArticleViewController.swift in Sources */,
@@ -351,23 +310,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C502D0D91A9F5D9D009F7827 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C502D0E41A9F5D9D009F7827 /* liferay_tasksTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C502D0DF1A9F5D9D009F7827 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C502D0C71A9F5D9D009F7827 /* liferay-tasks */;
-			targetProxy = C502D0DE1A9F5D9D009F7827 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C502D0D11A9F5D9D009F7827 /* Main.storyboard */ = {
@@ -409,6 +352,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -423,7 +367,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -460,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -473,17 +417,22 @@
 			baseConfigurationReference = ECB69A9EE9A3515EA9918B94 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Private\"",
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"${PODS_ROOT}/Headers/Public/Liferay-iOS-SDK\"",
-					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
-					"\"${PODS_ROOT}/Headers/Public/KeychainAccess\"",
+					"\"${PODS_ROOT}/Headers/Private/Liferay-iOS-SDK\"",
+					"\"${PODS_ROOT}/Headers/Private/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Private/KeychainAccess\"",
 				);
 				INFOPLIST_FILE = "liferay-tasks/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prodyna.liferay-tasks";
 				PRODUCT_NAME = "Liferay Tasks";
+				PROVISIONING_PROFILE = "256aed9e-24a0-4b81-9b74-964e3387429b";
 				SWIFT_OBJC_BRIDGING_HEADER = "liferay-tasks/liferay-tasks-bridge.h";
 			};
 			name = Debug;
@@ -493,52 +442,23 @@
 			baseConfigurationReference = 5345A39CB5EEA7B073D21E3D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Private\"",
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"${PODS_ROOT}/Headers/Public/Liferay-iOS-SDK\"",
-					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
-					"\"${PODS_ROOT}/Headers/Public/KeychainAccess\"",
+					"\"${PODS_ROOT}/Headers/Private/Liferay-iOS-SDK\"",
+					"\"${PODS_ROOT}/Headers/Private/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Private/KeychainAccess\"",
 				);
 				INFOPLIST_FILE = "liferay-tasks/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prodyna.liferay-tasks";
 				PRODUCT_NAME = "Liferay Tasks";
+				PROVISIONING_PROFILE = "256aed9e-24a0-4b81-9b74-964e3387429b";
 				SWIFT_OBJC_BRIDGING_HEADER = "liferay-tasks/liferay-tasks-bridge.h";
-			};
-			name = Release;
-		};
-		C502D0EB1A9F5D9D009F7827 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "liferay-tasksTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/liferay-tasks.app/liferay-tasks";
-			};
-			name = Debug;
-		};
-		C502D0EC1A9F5D9D009F7827 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "liferay-tasksTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/liferay-tasks.app/liferay-tasks";
 			};
 			name = Release;
 		};
@@ -559,15 +479,6 @@
 			buildConfigurations = (
 				C502D0E81A9F5D9D009F7827 /* Debug */,
 				C502D0E91A9F5D9D009F7827 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C502D0EA1A9F5D9D009F7827 /* Build configuration list for PBXNativeTarget "liferay-tasksTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C502D0EB1A9F5D9D009F7827 /* Debug */,
-				C502D0EC1A9F5D9D009F7827 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

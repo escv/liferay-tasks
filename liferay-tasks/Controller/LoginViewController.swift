@@ -41,9 +41,9 @@ class LoginViewController : UIViewController {
             
             // loading initial table list view
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let navCtrl = storyboard.instantiateViewControllerWithIdentifier("WorkflowTasksTable") as UINavigationController
-            let myTasksTVC = navCtrl.viewControllers.first as MyTasksTableViewController
-            let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+            let navCtrl = storyboard.instantiateViewControllerWithIdentifier("WorkflowTasksTable") as! UINavigationController
+            let myTasksTVC = navCtrl.viewControllers.first as! MyTasksTableViewController
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             
             myTasksTVC.session = session
             appDelegate.session = session

@@ -69,7 +69,7 @@ class MyTasksTableViewController : UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("WorkflowTaskCell") as WorkflowTaskTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("WorkflowTaskCell") as! WorkflowTaskTableViewCell
         let task = self.taskForIndexPath(indexPath)
         
         cell.nameLabel.text = task.title
@@ -80,6 +80,7 @@ class MyTasksTableViewController : UITableViewController {
     }
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+    
         let task = self.taskForIndexPath(indexPath)
         var actions:[UITableViewRowAction] = []
         
@@ -94,7 +95,7 @@ class MyTasksTableViewController : UITableViewController {
     }
     
     override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        let v = view as UITableViewHeaderFooterView
+        let v = view as! UITableViewHeaderFooterView
         v.backgroundView!.backgroundColor = UIColor(red: 40/255.0, green: 105/255.0, blue: 140/255.0, alpha: 1.0)
         v.textLabel.textColor = UIColor.whiteColor()
     }
@@ -148,7 +149,7 @@ class MyTasksTableViewController : UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "previewArticle") {
-            let previewVC = segue.destinationViewController as PreviewArticleViewController
+            let previewVC = segue.destinationViewController as! PreviewArticleViewController
             if let path = self.tableView.indexPathForSelectedRow() {
                 let task = self.taskForIndexPath(path)
                 LRCredentialStorage.getServer()
