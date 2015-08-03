@@ -28,13 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let registerUserNotificationSettings = UIApplication.instancesRespondToSelector("registerUserNotificationSettings:")
         if registerUserNotificationSettings {
             
-            let types: UIUserNotificationType = UIUserNotificationType.Alert |
-                    UIUserNotificationType.Badge |
-                    UIUserNotificationType.Sound
+            let types: UIUserNotificationType = (.Badge | .Sound | .Alert)
+            let settings: UIUserNotificationSettings =
+            UIUserNotificationSettings(forTypes: types, categories: nil)
             
-            UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: types, categories: nil))
-            UIApplication.sharedApplication().registerForRemoteNotifications()
-            
+            application.registerUserNotificationSettings(settings);
+            application.registerForRemoteNotifications()
         }
         
         //self.addCertToKeychain()
@@ -48,6 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ) {
             //Process the deviceToken and send it to your server
             NSLog("My token is: %@", deviceToken)
+            
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject(deviceToken, forKey: "deviceToken")
     }
     
     func application(

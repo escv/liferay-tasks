@@ -27,6 +27,8 @@ PODS:
     - AFNetworking (~> 2.5.0)
   - Liferay-OAuth (0.1.0):
     - Liferay-iOS-SDK (= 6.2.0.17)
+  - Liferay-Push (1.0.5):
+    - Liferay-iOS-SDK (= 6.2.0.17)
   - LiferayScreens (1.1.0):
     - CryptoSwift
     - DTPickerPresenter
@@ -46,7 +48,17 @@ PODS:
 
 DEPENDENCIES:
   - Liferay-iOS-SDK
+  - Liferay-Push (from `https://github.com/brunofarache/liferay-push-ios.git`)
   - LiferayScreens
+
+EXTERNAL SOURCES:
+  Liferay-Push:
+    :git: https://github.com/brunofarache/liferay-push-ios.git
+
+CHECKOUT OPTIONS:
+  Liferay-Push:
+    :commit: 4793be9485051b2caac18ad0ae5d59f6bf9864f1
+    :git: https://github.com/brunofarache/liferay-push-ios.git
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
@@ -55,6 +67,7 @@ SPEC CHECKSUMS:
   KeychainAccess: 3d7922baf90762a976adb7f6030d74c1a4110a1d
   Liferay-iOS-SDK: 00b511b88592d07faade2bed8252c04193df565d
   Liferay-OAuth: 4e217d2e2483788324b16dce65c30884ec8eb1db
+  Liferay-Push: 95a3d7a387d381596d4e9394f68de7df24eda292
   LiferayScreens: fe6f1284407c0a8154ae52eca7c69791ababa6b5
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MDRadialProgress: 1068574b9b4b870f64b605b07f734385bde5104d

@@ -8,6 +8,7 @@
 
 import UIKit
 import LiferayScreens
+import LRPush
 
 class LoginViewController : UIViewController, LoginScreenletDelegate {
     
@@ -29,6 +30,12 @@ class LoginViewController : UIViewController, LoginScreenletDelegate {
     func screenlet(screenlet: BaseScreenlet,
         onLoginResponseUserAttributes attributes: [String:AnyObject]) {
             println("DELEGATE: onLoginResponse called -> \(attributes)");
+            
+            let defaults = NSUserDefaults.standardUserDefaults()
+            let deviceToken = defaults.objectForKey("deviceToken")
+            
+            let lrPush = LRPush.withSession(SessionContext.createSessionFromCurrentSession()!)
+            lrPush.registerDeviceTokenData(deviceToken as! NSData)
             
             self.performSegueWithIdentifier("initialSegue", sender: self)
     }
