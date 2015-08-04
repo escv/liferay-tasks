@@ -59,6 +59,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //Log an error for debugging purposes, user doesn't need to know
             NSLog("Failed to get token; error: %@", error) 
     }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        NSLog("Received Remote Notification")
+    }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        NSLog("Received Local Notification")
+    }
 
     func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         

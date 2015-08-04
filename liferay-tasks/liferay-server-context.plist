@@ -5,7 +5,7 @@
 	<key>companyId</key>
 	<real>10155</real>
 	<key>server</key>
-	<string>http://10.3.1.41:8080</string>
+	<string>http://10.3.0.218:8080</string>
 	<key>groupId</key>
 	<integer>0</integer>
 </dict>
