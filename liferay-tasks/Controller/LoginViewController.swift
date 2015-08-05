@@ -20,19 +20,23 @@ class LoginViewController : UIViewController, LoginScreenletDelegate {
         self.screenlet?.presentingViewController = self
         self.screenlet?.delegate = self
         
+        SessionContext.loadSessionFromStore()
+        
         // prefill fields
         if SessionContext.hasSession {
             self.screenlet?.viewModel.userName = SessionContext.currentBasicUserName
             self.screenlet?.viewModel.password = SessionContext.currentBasicPassword
-        }
+        } 
     }
     
     func screenlet(screenlet: BaseScreenlet,
         onLoginResponseUserAttributes attributes: [String:AnyObject]) {
             println("DELEGATE: onLoginResponse called -> \(attributes)");
             
+           SessionContext.storeSession()
+            
             let defaults = NSUserDefaults.standardUserDefaults()
-            let deviceToken = defaults.objectForKey("deviceToken")
+            let deviceToken: AnyObject? = defaults.objectForKey("deviceToken")
             
             let lrPush = LRPush.withSession(SessionContext.createSessionFromCurrentSession()!)
             lrPush.registerDeviceTokenData(deviceToken as! NSData)
@@ -52,31 +56,4 @@ class LoginViewController : UIViewController, LoginScreenletDelegate {
     func onScreenletCredentialsLoaded(screenlet: BaseScreenlet) {
         println("DELEGATE: onCredentialsLoaded called");
     }
-    
-//    @IBAction func login(sender: AnyObject) {
-//        let auth = LRBasicAuthentication(username: usernameField.text, password: passwordField.text)
-//        let session = LRSession(server: liferayHostField.text, authentication: auth)
-//        let portalService:LRPortalService_v62 = LRPortalService_v62(session: session)
-//
-//        var e = NSError?()
-//        let portalNr = portalService.getBuildNumber(&e).stringValue
-//
-//        if (portalNr.hasPrefix("62")) {
-//            LRCredentialStorage.storeCredentialForServer(liferayHostField.text,
-//                username: usernameField.text,
-//                password: passwordField.text)
-//            
-//            // loading initial table list view
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let navCtrl = storyboard.instantiateViewControllerWithIdentifier("WorkflowTasksTable") as! UINavigationController
-//            let myTasksTVC = navCtrl.viewControllers.first as! MyTasksTableViewController
-//            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//            
-//            myTasksTVC.session = session
-//            appDelegate.session = session
-//            
-//            self.showViewController(navCtrl, sender:self)
-//        }
-//    }
-    
 }

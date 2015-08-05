@@ -105,7 +105,8 @@ class LRWorkflowTaskService {
             initiator: (dict["initiator"] as? String)!,
             entryType: (dict["entryType"] as? String)!,
             createDate: (dict["createDate"] as? String)!,
-            transitions: (dict["transitions"] as? [String])!
+            transitions: (dict["transitions"] as? [String])!,
+            articleId: (dict["articleId"] as? NSNumber)!.stringValue
         )
 
         return task

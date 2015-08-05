@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		959A3E2C7F8859FCF36A35DD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F14A23B0B3202581B62841 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		990148291B7233B600A131AC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990148281B7233B600A131AC /* SignUpViewController.swift */; };
 		99F5933C1B6FBC9A009187C3 /* liferay-server-context.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99F5933B1B6FBC9A009187C3 /* liferay-server-context.plist */; };
 		C502D0CE1A9F5D9D009F7827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C502D0CD1A9F5D9D009F7827 /* AppDelegate.swift */; };
 		C502D0D31A9F5D9D009F7827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C502D0D11A9F5D9D009F7827 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		5345A39CB5EEA7B073D21E3D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		990148281B7233B600A131AC /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		99F5933B1B6FBC9A009187C3 /* liferay-server-context.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "liferay-server-context.plist"; sourceTree = "<group>"; };
 		C502D0C81A9F5D9D009F7827 /* Liferay Tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Liferay Tasks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C502D0CC1A9F5D9D009F7827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				C5CDDBC81AA4BD7E002760F6 /* WorkflowTaskTableViewCell.swift */,
 				C5806D921AA6372B009C6D78 /* PreviewArticleViewController.swift */,
 				C5E7CBC31AB2CB2C00FD0CCB /* HeaderTableViewCell.swift */,
+				990148281B7233B600A131AC /* SignUpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				C5CDDBC91AA4BD7E002760F6 /* WorkflowTaskTableViewCell.swift in Sources */,
 				C502D0CE1A9F5D9D009F7827 /* AppDelegate.swift in Sources */,
 				C5CDDBC71AA4B516002760F6 /* LRWorkflowTaskService.swift in Sources */,
+				990148291B7233B600A131AC /* SignUpViewController.swift in Sources */,
 				C5806D931AA6372B009C6D78 /* PreviewArticleViewController.swift in Sources */,
 				C5FA45751AA47B45001662C6 /* WorkflowTask.swift in Sources */,
 			);

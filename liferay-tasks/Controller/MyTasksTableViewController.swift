@@ -162,4 +162,14 @@ class MyTasksTableViewController : UITableViewController {
     private func taskForIndexPath(indexPath:NSIndexPath) -> WorkflowTask {
         return indexPath.section == self.MY_TASKS_SECTION ? self.myTasks[indexPath.row] : self.groupTasks[indexPath.row]
     }
+    
+    @IBAction func logoutPressed(sender: AnyObject) {
+        
+        SessionContext.removeStoredSession()
+        self.performSegueWithIdentifier("logout", sender: self)
+        
+//        let vc = LoginViewController()
+//        
+//        self.presentViewController(vc, animated: true, completion: nil)
+    }
 }

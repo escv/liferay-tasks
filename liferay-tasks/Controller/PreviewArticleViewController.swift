@@ -11,22 +11,34 @@ import UIKit
 import LiferayScreens
 //import PKHUD
 
-class PreviewArticleViewController : UIViewController, UIWebViewDelegate, UIActionSheetDelegate {
+class PreviewArticleViewController : UIViewController, UIActionSheetDelegate, UIWebViewDelegate, WebContentDisplayScreenletDelegate {
     
     var task:WorkflowTask?
     
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet var webView: UIWebView!
+    @IBOutlet var screenlet: WebContentDisplayScreenlet!
     @IBOutlet weak var actionSheetButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.screenlet?.presentingViewController = self
+        self.screenlet?.delegate = self
+        
         self.actionSheetButton.enabled = true;
         
+        //            self.screenlet.groupId = 10182
+        //            self.screenlet.articleId = self.task!.articleId
+        //            self.screenlet.articleId = "11914"
+        
+        //         self.screenlet.loadWebContent()
+        
         if let journalPreviewURL = self.task?.previewURL  {
+            
             self.webView.delegate = self
-
-            let req = NSMutableURLRequest(URL: NSURL(string: LRCredentialStorage.getServer() + journalPreviewURL)!)
+            
+            let server = SessionContext.createBatchSessionFromCurrentSession()?.server
+            let req = NSMutableURLRequest(URL: NSURL(string: server! + journalPreviewURL)!)
             self.webView.loadRequest(req)
         }
     }
@@ -75,6 +87,17 @@ class PreviewArticleViewController : UIViewController, UIWebViewDelegate, UIActi
         }))
         self.presentViewController(alert, animated: true, completion: nil)
     }
+    
+    
+    func screenlet(screenlet: WebContentDisplayScreenlet, onWebContentError error: NSError) {
+        NSLog("onWebContentError: %@", error)
+    }
+    
+    func screenlet(screenlet: WebContentDisplayScreenlet, onWebContentResponse html: String) -> String? {
+        NSLog("onWebContentResponse: %@", html)
+        return nil
+    }
+    
     
     func webViewDidStartLoad(webView: UIWebView) {
 //        let contentView = HUDContentView.ProgressView()

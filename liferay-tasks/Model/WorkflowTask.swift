@@ -32,5 +32,7 @@ struct WorkflowTask {
     var createDate: String
     
     var transitions: [String]
+    
+    var articleId: String
 
 }
