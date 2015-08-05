@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import LiferayScreens
+import JGProgressHUD
 
 class MyTasksTableViewController : UITableViewController {
 
@@ -19,12 +20,14 @@ class MyTasksTableViewController : UITableViewController {
     var groupTasks:[WorkflowTask] = []
     let taskService = LRWorkflowTaskService()
     
+    let hud: JGProgressHUD = JGProgressHUD(style: JGProgressHUDStyle.Light)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         reload()
         if let refresh = self.refreshControl {
+            refresh.tintColor = UIColor.whiteColor()
             refresh.addTarget(self, action: "reload", forControlEvents: UIControlEvents.ValueChanged)
         }
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "BlurredBG"))
@@ -34,6 +37,9 @@ class MyTasksTableViewController : UITableViewController {
     * Reload both collections (assigned and group tasks)
     **/
     func reload() {
+        
+        self.hud.showInView(self.view)
+        
         if let lrSession = SessionContext.createSessionFromCurrentSession() {
             taskService.loadMyTasks(lrSession, success: { (tasks:[WorkflowTask]) -> Void in
                 self.myTasks = tasks
@@ -41,6 +47,7 @@ class MyTasksTableViewController : UITableViewController {
                 if let refresher = self.refreshControl {
                     refresher.endRefreshing()
                 }
+                self.hud.dismissAnimated(true)
             })
             taskService.loadGroupTasks(lrSession, success: { (tasks:[WorkflowTask]) -> Void in
                 self.groupTasks = tasks
@@ -48,11 +55,11 @@ class MyTasksTableViewController : UITableViewController {
                 if let refresher = self.refreshControl {
                     refresher.endRefreshing()
                 }
+                self.hud.dismissAnimated(true)
             })
         }
     }
     
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return section == 0 ? myTasks.count : groupTasks.count
     }
@@ -85,7 +92,7 @@ class MyTasksTableViewController : UITableViewController {
         var actions:[UITableViewRowAction] = []
         
         if (indexPath.section == self.GROUP_TASKS_SECTION) {
-            actions.append(UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Assign Me", handler: self.assignToMeAction))
+            actions.append(UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Assign to me", handler: self.assignToMeAction))
         } else {
             for trans in task.transitions {
                 actions.append(self.createCompleteTaskAction(task, transition: trans))
