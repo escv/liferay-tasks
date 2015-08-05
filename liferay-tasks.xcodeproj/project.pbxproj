@@ -92,8 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				C502D0CD1A9F5D9D009F7827 /* AppDelegate.swift */,
-				99F5933D1B6FC338009187C3 /* UserInterface */,
 				C502D0D41A9F5D9D009F7827 /* Images.xcassets */,
+				99F5933D1B6FC338009187C3 /* UserInterface */,
 				C502D0CB1A9F5D9D009F7827 /* Supporting Files */,
 				C5FA45771AA47D81001662C6 /* Controller */,
 				C5FA45761AA47C8F001662C6 /* Model */,
@@ -436,6 +436,7 @@
 					"\"${PODS_ROOT}/Headers/Private/Liferay-iOS-SDK\"",
 					"\"${PODS_ROOT}/Headers/Private/AFNetworking\"",
 					"\"${PODS_ROOT}/Headers/Private/KeychainAccess\"",
+					"\"${PODS_ROOT}/Headers/Private/PKHUD\"",
 				);
 				INFOPLIST_FILE = "liferay-tasks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
@@ -461,6 +462,7 @@
 					"\"${PODS_ROOT}/Headers/Private/Liferay-iOS-SDK\"",
 					"\"${PODS_ROOT}/Headers/Private/AFNetworking\"",
 					"\"${PODS_ROOT}/Headers/Private/KeychainAccess\"",
+					"\"${PODS_ROOT}/Headers/Private/PKHUD\"",
 				);
 				INFOPLIST_FILE = "liferay-tasks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;

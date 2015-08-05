@@ -311,8 +311,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="suE-0K-1d5"/>
                                 <exclude reference="gVQ-ly-C5i"/>
+                                <exclude reference="suE-0K-1d5"/>
                             </mask>
                         </variation>
                     </view>
@@ -437,7 +437,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" shadowImage="Background" id="uis-mP-TMW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.15686274510000001" green="0.41176470590000003" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.058823529409999999" green="0.1176470588" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -510,7 +510,7 @@
         <image name="TaskIcon" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="S1u-KH-fxk"/>
+        <segue reference="ASE-M6-aYD"/>
         <segue reference="MXV-4h-LgR"/>
     </inferredMetricsTieBreakers>
 </document>

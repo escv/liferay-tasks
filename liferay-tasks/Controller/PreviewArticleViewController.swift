@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import LiferayScreens
-//import PKHUD
+import JGProgressHUD
 
 class PreviewArticleViewController : UIViewController, UIActionSheetDelegate, UIWebViewDelegate, WebContentDisplayScreenletDelegate {
     
@@ -18,6 +18,8 @@ class PreviewArticleViewController : UIViewController, UIActionSheetDelegate, UI
     @IBOutlet var webView: UIWebView!
     @IBOutlet var screenlet: WebContentDisplayScreenlet!
     @IBOutlet weak var actionSheetButton: UIBarButtonItem!
+    
+    var HUD: JGProgressHUD?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,7 @@ class PreviewArticleViewController : UIViewController, UIActionSheetDelegate, UI
         self.screenlet?.delegate = self
         
         self.actionSheetButton.enabled = true;
+        self.HUD = JGProgressHUD(style: JGProgressHUDStyle.Light)
         
         //            self.screenlet.groupId = 10182
         //            self.screenlet.articleId = self.task!.articleId
@@ -77,9 +80,12 @@ class PreviewArticleViewController : UIViewController, UIActionSheetDelegate, UI
                 let taskService = LRWorkflowTaskService()
                 taskService.completeTask(self.task!.workflowTaskId, transition: transition, comment: tf!.text, session: lrSession, success: { (tasks:[WorkflowTask]) -> Void in
                     // enable action because transitions have changed after execution
-//                    HUDController.sharedController.contentView = HUDContentView.TitleView(title: "Success", image: nil)
-//                    HUDController.sharedController.show()
-//                    HUDController.sharedController.hide(afterDelay: 2.0)
+                    
+                    let hud = JGProgressHUD(style: JGProgressHUDStyle.Light)
+                    hud.textLabel.text = "Success"
+                    hud.showInView(self.view)
+                    hud.dismissAfterDelay(2.0)
+                    
                     self.actionSheetButton.enabled = false;
                 })
             }
@@ -100,12 +106,10 @@ class PreviewArticleViewController : UIViewController, UIActionSheetDelegate, UI
     
     
     func webViewDidStartLoad(webView: UIWebView) {
-//        let contentView = HUDContentView.ProgressView()
-//        HUDController.sharedController.contentView = contentView
-//        HUDController.sharedController.show()
+        HUD!.showInView(self.view)
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
-//        HUDController.sharedController.hide(animated: true)
+        HUD!.dismissAnimated(true)
     }
 }

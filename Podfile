@@ -6,6 +6,7 @@ use_frameworks!
 
 pod 'Liferay-iOS-SDK'
 #pod 'PKHUD'
+pod 'JGProgressHUD'
 pod 'LiferayScreens'
 pod 'Liferay-Push', :git => "https://github.com/brunofarache/liferay-push-ios.git"
 

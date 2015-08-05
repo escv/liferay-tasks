@@ -167,9 +167,5 @@ class MyTasksTableViewController : UITableViewController {
         
         SessionContext.removeStoredSession()
         self.performSegueWithIdentifier("logout", sender: self)
-        
-//        let vc = LoginViewController()
-//        
-//        self.presentViewController(vc, animated: true, completion: nil)
     }
 }
