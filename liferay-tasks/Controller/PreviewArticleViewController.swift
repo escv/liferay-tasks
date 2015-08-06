@@ -8,26 +8,40 @@
 
 import Foundation
 import UIKit
-import PKHUD
+import LiferayScreens
+import JGProgressHUD
 
-class PreviewArticleViewController : UIViewController, UIWebViewDelegate, UIActionSheetDelegate {
+class PreviewArticleViewController : UIViewController, UIActionSheetDelegate, UIWebViewDelegate, WebContentDisplayScreenletDelegate {
     
     var task:WorkflowTask?
     
-    var session:LRSession?
-    
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet var webView: UIWebView!
+    @IBOutlet var screenlet: WebContentDisplayScreenlet!
     @IBOutlet weak var actionSheetButton: UIBarButtonItem!
+    
+    var HUD: JGProgressHUD?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.screenlet?.presentingViewController = self
+        self.screenlet?.delegate = self
+        
         self.actionSheetButton.enabled = true;
+        self.HUD = JGProgressHUD(style: JGProgressHUDStyle.Light)
+        
+        //            self.screenlet.groupId = 10182
+        //            self.screenlet.articleId = self.task!.articleId
+        //            self.screenlet.articleId = "11914"
+        
+        //         self.screenlet.loadWebContent()
         
         if let journalPreviewURL = self.task?.previewURL  {
+            
             self.webView.delegate = self
-
-            let req = NSMutableURLRequest(URL: NSURL(string: LRCredentialStorage.getServer() + journalPreviewURL)!)
+            
+            let server = SessionContext.createBatchSessionFromCurrentSession()?.server
+            let req = NSMutableURLRequest(URL: NSURL(string: server! + journalPreviewURL)!)
             self.webView.loadRequest(req)
         }
     }
@@ -62,13 +76,16 @@ class PreviewArticleViewController : UIViewController, UIWebViewDelegate, UIActi
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action:UIAlertAction!) -> Void in
             let tf = alert.textFields?.first as? UITextField
 
-            if let lrSession = self.session {
+            if let lrSession = SessionContext.createSessionFromCurrentSession() {
                 let taskService = LRWorkflowTaskService()
                 taskService.completeTask(self.task!.workflowTaskId, transition: transition, comment: tf!.text, session: lrSession, success: { (tasks:[WorkflowTask]) -> Void in
                     // enable action because transitions have changed after execution
-                    HUDController.sharedController.contentView = HUDContentView.TitleView(title: "Success", image: nil)
-                    HUDController.sharedController.show()
-                    HUDController.sharedController.hide(afterDelay: 2.0)
+                    
+                    let hud = JGProgressHUD(style: JGProgressHUDStyle.Light)
+                    hud.textLabel.text = "Success"
+                    hud.showInView(self.view)
+                    hud.dismissAfterDelay(2.0)
+                    
                     self.actionSheetButton.enabled = false;
                 })
             }
@@ -77,13 +94,22 @@ class PreviewArticleViewController : UIViewController, UIWebViewDelegate, UIActi
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
+    
+    func screenlet(screenlet: WebContentDisplayScreenlet, onWebContentError error: NSError) {
+        NSLog("onWebContentError: %@", error)
+    }
+    
+    func screenlet(screenlet: WebContentDisplayScreenlet, onWebContentResponse html: String) -> String? {
+        NSLog("onWebContentResponse: %@", html)
+        return nil
+    }
+    
+    
     func webViewDidStartLoad(webView: UIWebView) {
-        let contentView = HUDContentView.ProgressView()
-        HUDController.sharedController.contentView = contentView
-        HUDController.sharedController.show()
+        HUD!.showInView(self.view)
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
-        HUDController.sharedController.hide(animated: true)
+        HUD!.dismissAnimated(true)
     }
 }

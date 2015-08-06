@@ -1,8 +1,12 @@
 source 'https://github.com/CocoaPods/Specs.git'
-# platform: ios, '8.1'
-link_with 'liferay-tasks'
+platform :ios, '8.4'
+#link_with 'liferay-tasks'
 
-pod 'Liferay-iOS-SDK', '~>6.2'
-pod 'PKHUD', :git => "http://github.com/pkluz/PKHUD.git"
+use_frameworks!
 
+pod 'Liferay-iOS-SDK'
+#pod 'PKHUD'
+pod 'JGProgressHUD'
+pod 'LiferayScreens'
+pod 'Liferay-Push', :git => "https://github.com/brunofarache/liferay-push-ios.git"
 

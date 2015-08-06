@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LiferayScreens
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,14 +27,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // ask user for background mode activation
         let registerUserNotificationSettings = UIApplication.instancesRespondToSelector("registerUserNotificationSettings:")
         if registerUserNotificationSettings {
-            let types: UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Sound
-            UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: types, categories: nil))
-
+            
+            let types: UIUserNotificationType = (.Badge | .Sound | .Alert)
+            let settings: UIUserNotificationSettings =
+            UIUserNotificationSettings(forTypes: types, categories: nil)
+            
+            application.registerUserNotificationSettings(settings);
+            application.registerForRemoteNotifications()
         }
         
         //self.addCertToKeychain()
         
         return true
+    }
+    
+    func application(
+        application: UIApplication,
+        didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData
+        ) {
+            //Process the deviceToken and send it to your server
+            NSLog("My token is: %@", deviceToken)
+            
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject(deviceToken, forKey: "deviceToken")
+    }
+    
+    func application(
+        application: UIApplication,
+        didFailToRegisterForRemoteNotificationsWithError error: NSError
+        ) {
+            //Log an error for debugging purposes, user doesn't need to know
+            NSLog("Failed to get token; error: %@", error) 
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        NSLog("Received Remote Notification")
+    }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        NSLog("Received Local Notification")
     }
 
     func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
@@ -93,7 +125,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func addCertToKeychain() {
 
         let mainbun = NSBundle.mainBundle().pathForResource("pd-test", ofType: "cer")
-        var key: NSData = NSData.dataWithContentsOfMappedFile(mainbun!)! as NSData
+        var key: NSData = NSData.dataWithContentsOfMappedFile(mainbun!)! as! NSData
         var cert:SecCertificateRef =
             SecCertificateCreateWithData(kCFAllocatorDefault, key).takeRetainedValue()
 

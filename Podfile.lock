@@ -1,51 +1,81 @@
 PODS:
-  - AFNetworking (2.3.1):
-    - AFNetworking/NSURLConnection (= 2.3.1)
-    - AFNetworking/NSURLSession (= 2.3.1)
-    - AFNetworking/Reachability (= 2.3.1)
-    - AFNetworking/Security (= 2.3.1)
-    - AFNetworking/Serialization (= 2.3.1)
-    - AFNetworking/UIKit (= 2.3.1)
-  - AFNetworking/NSURLConnection (2.3.1):
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking/NSURLConnection (2.5.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.3.1):
+  - AFNetworking/NSURLSession (2.5.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.3.1)
-  - AFNetworking/Security (2.3.1)
-  - AFNetworking/Serialization (2.3.1)
-  - AFNetworking/UIKit (2.3.1):
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Liferay-iOS-SDK (6.2.0.12):
-    - AFNetworking (~> 2.3.0)
-    - Liferay-iOS-SDK/Liferay-Push-Notifications-iOS-SDK (= 6.2.0.12)
-    - Liferay-iOS-SDK/Liferay-Sync-iOS-SDK (= 6.2.0.12)
-  - Liferay-iOS-SDK/Liferay-Push-Notifications-iOS-SDK (6.2.0.12):
-    - AFNetworking (~> 2.3.0)
-  - Liferay-iOS-SDK/Liferay-Sync-iOS-SDK (6.2.0.12):
-    - AFNetworking (~> 2.3.0)
-  - PKHUD (1.0.0)
+  - CryptoSwift (0.0.12)
+  - DTPickerPresenter (0.2.0)
+  - JGProgressHUD (1.3)
+  - KeychainAccess (1.2.1)
+  - Liferay-iOS-SDK (6.2.0.17):
+    - AFNetworking (~> 2.5.0)
+  - Liferay-OAuth (0.1.0):
+    - Liferay-iOS-SDK (= 6.2.0.17)
+  - Liferay-Push (1.0.5):
+    - Liferay-iOS-SDK (= 6.2.0.17)
+  - LiferayScreens (1.1.0):
+    - CryptoSwift
+    - DTPickerPresenter
+    - KeychainAccess
+    - Liferay-iOS-SDK (= 6.2.0.17)
+    - Liferay-OAuth
+    - MBProgressHUD (~> 0.9.1)
+    - MDRadialProgress
+    - ODRefreshControl
+    - SMXMLDocument
+    - TNRadioButtonGroup
+  - MBProgressHUD (0.9.1)
+  - MDRadialProgress (1.3.2)
+  - ODRefreshControl (1.2)
+  - SMXMLDocument (1.1)
+  - TNRadioButtonGroup (0.4)
 
 DEPENDENCIES:
-  - Liferay-iOS-SDK (~> 6.2)
-  - PKHUD (from `http://github.com/pkluz/PKHUD.git`)
+  - JGProgressHUD
+  - Liferay-iOS-SDK
+  - Liferay-Push (from `https://github.com/brunofarache/liferay-push-ios.git`)
+  - LiferayScreens
 
 EXTERNAL SOURCES:
-  PKHUD:
-    :git: http://github.com/pkluz/PKHUD.git
+  Liferay-Push:
+    :git: https://github.com/brunofarache/liferay-push-ios.git
 
 CHECKOUT OPTIONS:
-  PKHUD:
-    :commit: 17fa2c39040ee69086e26f6e7696a6be75771edf
-    :git: http://github.com/pkluz/PKHUD.git
+  Liferay-Push:
+    :commit: 4793be9485051b2caac18ad0ae5d59f6bf9864f1
+    :git: https://github.com/brunofarache/liferay-push-ios.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
-  Liferay-iOS-SDK: 5083b7c78e30782432b86a306ff1a6e6e3a4291f
-  PKHUD: aa08b8889bdaf585faf977b746e8b2a39578a7a7
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  CryptoSwift: 16f1b5a768057636275b76d1c43231c2abba9e80
+  DTPickerPresenter: 1976573e3475534559b6ec1dad64b2ece16c966d
+  JGProgressHUD: a58f62d3afac173d201250c3ba628fe44bd67017
+  KeychainAccess: 3d7922baf90762a976adb7f6030d74c1a4110a1d
+  Liferay-iOS-SDK: 00b511b88592d07faade2bed8252c04193df565d
+  Liferay-OAuth: 4e217d2e2483788324b16dce65c30884ec8eb1db
+  Liferay-Push: 95a3d7a387d381596d4e9394f68de7df24eda292
+  LiferayScreens: fe6f1284407c0a8154ae52eca7c69791ababa6b5
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  MDRadialProgress: 1068574b9b4b870f64b605b07f734385bde5104d
+  ODRefreshControl: 907e6149d72dde488d5917ccfabee5bd8d711a20
+  SMXMLDocument: e0d9fbf726a2a0921871b492966458acb3ad9689
+  TNRadioButtonGroup: f5fb9b545d8913bbabe6a72ea1fa6fba4d833bb6
 
-COCOAPODS: 0.36.0.beta.1
+COCOAPODS: 0.38.2
